@@ -29,7 +29,7 @@ const ids: Record<number, String> = {
 
 ids[30]= "c";
 
-// comparison
+// comparisons
 if(ids[30] === "c"){
     
 }
