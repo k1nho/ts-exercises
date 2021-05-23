@@ -20,14 +20,28 @@ export const printFormat = (title: string, param: string | number): void =>{
     console.log(format(title, param));
 }
 
-// function to return promise
-export const fetchData = (url: string): Promise<string> =>{
-
-    Promise.resolve(`Data from ${url}`)
-}
-
 // spread operator use
 function greeting(introduction: String, ...names: string[]): string {
     return `${introduction} ${names.join(" ")}`
 }
+
+// functions that take functions as params
+export function printToFile(text : string, callback : () => void): void{
+    console.log(text);
+    callback();
+}
+
+
+//To declare a function prototype
+type MutationFunction = (v:number ) => number;
+
+
+// function to generate another array
+export function arrayMutate(numbers: number[], mutate: MutationFunction): number[]{
+    return numbers.map(mutate);
+}
+
+console.log(arrayMutate([1,2,3], (v) => v*10));
+
+
 
